@@ -36,7 +36,7 @@ const PromptPyramid = () => {
       </div>
 
       <p className="mt-6 text-gray-600 text-center">
-        Master these 6 steps to unlock AI's full potential!
+        Master these 6 steps to unlock AI full potential!
       </p>
     </div>
   );
