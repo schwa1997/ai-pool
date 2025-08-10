@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 const Posture = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 font-noto-sans-sc">
+    <div className="mx-auto px-4 py-4 font-noto-sans-sc" style={{ width: '500px', height: '750px' }}>
       {/* 帖子1：为什么小孩骨盆前倾不痛 */}
-      <div className="mb-16 bg-white shadow-md overflow-hidden">
+      <div className="mb-16 overflow-hidden">
         <div className="relative h-64 w-full">
           <Image
-            src="https://www.shutterstock.com/image-photo/naked-baby-walking-studio-shot-600nw-1064477180.jpg"
+            src="https://www.shutterstock.com/ima ge-photo/naked-baby-walking-studio-shot-600nw-1064477180.jpg"
             alt="儿童自然骨盆前倾"
             layout="fill"
             objectFit="cover"
