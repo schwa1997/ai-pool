@@ -1,19 +1,21 @@
-"use client"
+"use client";
 import React from "react";
 
 interface PronunciationCourseMaterialProps {
   darkMode: boolean;
 }
-const PronunciationCourseMaterial: React.FC<PronunciationCourseMaterialProps> = ({ darkMode }) => {
-    const [expandedSections, setExpandedSections] = React.useState<number[]>([]);
-  
-    const toggleSection = (index: number) => {
-      if (expandedSections.includes(index)) {
-        setExpandedSections(expandedSections.filter((i) => i !== index));
-      } else {
-        setExpandedSections([...expandedSections, index]);
-      }
-    };
+const PronunciationCourseMaterial: React.FC<
+  PronunciationCourseMaterialProps
+> = ({ darkMode }) => {
+  const [expandedSections, setExpandedSections] = React.useState<number[]>([]);
+
+  const toggleSection = (index: number) => {
+    if (expandedSections.includes(index)) {
+      setExpandedSections(expandedSections.filter((i) => i !== index));
+    } else {
+      setExpandedSections([...expandedSections, index]);
+    }
+  };
 
   // Color scheme classes
   const bgColor = darkMode ? "bg-gray-900" : "bg-white";
@@ -211,7 +213,7 @@ const PronunciationCourseMaterial: React.FC<PronunciationCourseMaterialProps> = 
                   <tr>
                     <th className="px-4 py-2 text-left">音标</th>
                     <th className="px-4 py-2 text-left">示例单词</th>
-                    <th className="px-4 py-2 text-left">常见错误</th>
+                    <th className="px-4 py-2 text-left">发音技巧</th>
                     <th className="px-4 py-2 text-left">发音要点</th>
                   </tr>
                 </thead>
@@ -220,37 +222,473 @@ const PronunciationCourseMaterial: React.FC<PronunciationCourseMaterialProps> = 
                     darkMode ? "divide-gray-600" : "divide-gray-200"
                   }`}
                 >
+                  <tr> 前元音：舌尖抵下齿，舌前部隆起 </tr>
                   <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
                     <td className="px-4 py-2 font-mono text-lg">/iː/</td>
-                    <td className="px-4 py-2">sheep, see</td>
-                    <td className="px-4 py-2 text-red-500">
-                      发成短音/ɪ/(ship)
+                    <td className="px-4 py-2">sheep, see, eat</td>
+                    <td className="px-4 py-2 text-green-600">
+                      保持长音，多拉长一点，嘴角像微笑
                     </td>
-                    <td className="px-4 py-2">嘴角向两侧拉伸，保持肌肉紧张</td>
+                    <td className="px-4 py-2">
+                      ①舌尖抵下齿背 ②舌前部用力隆起 ③嘴角向两侧拉伸（微笑状）
+                    </td>
                   </tr>
                   <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
                     <td className="px-4 py-2 font-mono text-lg">/ɪ/</td>
-                    <td className="px-4 py-2">ship, sit</td>
-                    <td className="px-4 py-2 text-red-500">发成中文"一"</td>
-                    <td className="px-4 py-2">短促放松，下巴稍降</td>
+                    <td className="px-4 py-2">ship, sit, big</td>
+                    <td className="px-4 py-2 text-green-600">
+                      声音要短促轻松，不要拖长
+                    </td>
+                    <td className="px-4 py-2">
+                      ①舌尖抵下齿 ②舌前部轻微抬起 ③下巴稍降（短促放松）
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/e/</td>
+                    <td className="px-4 py-2">bed, head, red</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴角微微张开，保持中等时长
+                    </td>
+                    <td className="px-4 py-2">
+                      ①舌尖抵下齿 ②舌前部抬到中高位置 ③嘴唇微扁（微笑到一半）
+                    </td>
                   </tr>
                   <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
                     <td className="px-4 py-2 font-mono text-lg">/æ/</td>
-                    <td className="px-4 py-2">cat, bad</td>
-                    <td className="px-4 py-2 text-red-500">发成中文"爱"</td>
-                    <td className="px-4 py-2">嘴张大到两指宽，舌尖抵下齿</td>
+                    <td className="px-4 py-2">cat, bad, apple</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴张大，下巴放松，声音更开阔
+                    </td>
+                    <td className="px-4 py-2">
+                      ①舌尖紧贴下齿 ②嘴张大到两指宽 ③下巴大幅下拉（像检查喉咙）
+                    </td>
+                  </tr>
+
+                  <tr>中元音：舌身平放，中部微微隆起 </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɜː/</td>
+                    <td className="px-4 py-2">bird, learn, girl</td>
+                    <td className="px-4 py-2 text-green-600">
+                      拉长声音，嘴唇自然放松
+                    </td>
+                    <td className="px-4 py-2">
+                      ①舌身平放中部隆起 ②嘴唇自然放松 ③长音保持
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ə/</td>
+                    <td className="px-4 py-2">about, sofa, pencil</td>
+                    <td className="px-4 py-2 text-green-600">
+                      轻声快速读过，不要用力
+                    </td>
+                    <td className="px-4 py-2">
+                      ①最放松的中性音 ②短促模糊（像轻声"的"）
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ʌ/</td>
+                    <td className="px-4 py-2">cup, luck, blood</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴自然张开，声音要短而有力
+                    </td>
+                    <td className="px-4 py-2">
+                      ①舌中部微微抬起 ②嘴唇放松不圆 ③短促有力
+                    </td>
+                  </tr>
+
+                  <tr>后元音：舌身后缩，舌根靠近软腭 </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/uː/</td>
+                    <td className="px-4 py-2">food, blue</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴收圆，声音要拖长
+                    </td>
+                    <td className="px-4 py-2">双唇收圆突出，舌身后缩</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ʊ/</td>
+                    <td className="px-4 py-2">good, put</td>
+                    <td className="px-4 py-2 text-green-600">
+                      保持短促，比/uː/更轻松
+                    </td>
+                    <td className="px-4 py-2">短促圆唇，比/uː/更放松</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɔː/</td>
+                    <td className="px-4 py-2">door, law</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴唇收圆，声音稍微拖长
+                    </td>
+                    <td className="px-4 py-2">双唇收圆，舌身后缩隆起</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɒ/</td>
+                    <td className="px-4 py-2">hot, clock</td>
+                    <td className="px-4 py-2 text-green-600">
+                      短促有力，注意英式口型
+                    </td>
+                    <td className="px-4 py-2">短促圆唇，英音特有</td>
                   </tr>
                   <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
                     <td className="px-4 py-2 font-mono text-lg">/ɑː/</td>
                     <td className="px-4 py-2">car, far</td>
-                    <td className="px-4 py-2 text-red-500">发成中文"啊"</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴完全张开，声音要拉长
+                    </td>
                     <td className="px-4 py-2">口腔完全打开，舌身后缩</td>
+                  </tr>
+
+                  <tr>双元音：从一个元音滑向另一个元音 </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/eɪ/</td>
+                    <td className="px-4 py-2">day, face</td>
+                    <td className="px-4 py-2 text-green-600">
+                      从中间口型慢慢收小，清晰过渡
+                    </td>
+                    <td className="px-4 py-2">从/e/滑向/ɪ/，嘴角向两侧拉伸</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/aɪ/</td>
+                    <td className="px-4 py-2">my, time</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴先大后小，像中文"爱"但更自然
+                    </td>
+                    <td className="px-4 py-2">从/a/滑向/ɪ/，口腔由大到小</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɔɪ/</td>
+                    <td className="px-4 py-2">boy, coin</td>
+                    <td className="px-4 py-2 text-green-600">
+                      先圆唇，再慢慢张开，声音要滑动
+                    </td>
+                    <td className="px-4 py-2">从/ɔ/滑向/ɪ/，嘴唇先圆后扁</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/əʊ/</td>
+                    <td className="px-4 py-2">go, home</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴从松到圆，声音要顺滑
+                    </td>
+                    <td className="px-4 py-2">从/ə/滑向/ʊ/，嘴唇逐渐收圆</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/aʊ/</td>
+                    <td className="px-4 py-2">now, house</td>
+                    <td className="px-4 py-2 text-green-600">
+                      嘴巴张大后收圆，声音饱满
+                    </td>
+                    <td className="px-4 py-2">从/a/滑向/ʊ/，双唇逐渐收圆</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɪə/</td>
+                    <td className="px-4 py-2">ear, here</td>
+                    <td className="px-4 py-2 text-green-600">
+                      从/ɪ/轻轻滑到/ə/，不要只发成单音
+                    </td>
+                    <td className="px-4 py-2">从/ɪ/滑向/ə/，英音特有</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/eə/</td>
+                    <td className="px-4 py-2">air, there</td>
+                    <td className="px-4 py-2 text-green-600">
+                      口型要保持变化，声音自然过渡
+                    </td>
+                    <td className="px-4 py-2">从/e/滑向/ə/，英音特有</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ʊə/</td>
+                    <td className="px-4 py-2">tour, pure</td>
+                    <td className="px-4 py-2 text-green-600">
+                      从/ʊ/快速过渡到/ə/，口型柔和
+                    </td>
+                    <td className="px-4 py-2">
+                      从/ʊ/快速滑向/ə/，现代英语中较少见
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            className={`p-4 rounded-lg ${
+              darkMode ? "bg-gray-700" : "bg-blue-50"
+            }`}
+          >
+            <h4
+              className={`font-semibold ${
+                darkMode ? "text-blue-300" : "text-blue-800"
+              }`}
+            >
+              元音练习阶梯
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <div>
+                <h5 className="font-medium text-lg mb-2">初级词汇</h5>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    "cat",
+                    "bed",
+                    "sit",
+                    "dog",
+                    "bus",
+                    "cup",
+                    "hat",
+                    "pen",
+                    "big",
+                  ].map((word) => (
+                    <div
+                      key={word}
+                      className={`p-2 rounded text-center ${
+                        darkMode ? "bg-gray-600" : "bg-white"
+                      }`}
+                    >
+                      {word}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h5 className="font-medium text-lg mb-2">高级词汇</h5>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    "thorough",
+                    "entrepreneur",
+                    "phenomenon",
+                    "ambiguous",
+                    "architecture",
+                    "particularly",
+                    "vocabulary",
+                    "exaggerate",
+                    "miscellaneous",
+                  ].map((word) => (
+                    <div
+                      key={word}
+                      className={`p-2 rounded text-center ${
+                        darkMode ? "bg-gray-600" : "bg-white"
+                      }`}
+                    >
+                      {word}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "3. 元音发音训练但邪修版 / Vowel Pronunciation",
+      content: (
+        <div className="pl-6 space-y-6">
+          <div
+            className={`p-4 rounded-lg ${
+              darkMode ? "bg-gray-700" : "bg-purple-50"
+            }`}
+          >
+            <h4
+              className={`font-semibold ${
+                darkMode ? "text-purple-300" : "text-purple-800"
+              }`}
+            >
+              核心元音对照表
+            </h4>
+            <div className="overflow-x-auto mt-4">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className={darkMode ? "bg-gray-600" : "bg-gray-100"}>
+                  <tr>
+                    <th className="px-4 py-2 text-left">音标</th>
+                    <th className="px-4 py-2 text-left">示例单词</th>
+                    <th className="px-4 py-2 text-left">发音技巧</th>
+                    <th className="px-4 py-2 text-left">发音要点</th>
+                  </tr>
+                </thead>
+                <tbody
+                  className={`divide-y ${
+                    darkMode ? "divide-gray-600" : "divide-gray-200"
+                  }`}
+                >
+                  {/* 前元音 */}
+                  <tr>前元音：嘴巴靠前，像在“笑”或“咧嘴”</tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/iː/</td>
+                    <td className="px-4 py-2">sheep, see, eat</td>
+                    <td className="px-4 py-2 text-green-600">
+                      长长的“衣”，微笑拉开嘴角
+                    </td>
+                    <td className="px-4 py-2">
+                      舌尖抵下齿 → 舌前顶上去 → 嘴角笑开
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɪ/</td>
+                    <td className="px-4 py-2">ship, sit, big</td>
+                    <td className="px-4 py-2 text-green-600">
+                      短短的“衣”，像突然哼一下
+                    </td>
+                    <td className="px-4 py-2">
+                      舌尖抵下齿 → 舌头轻轻抬 → 下巴小动
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/e/</td>
+                    <td className="px-4 py-2">bed, head, red</td>
+                    <td className="px-4 py-2 text-green-600">
+                      介于“诶”和“欸”，半笑
+                    </td>
+                    <td className="px-4 py-2">舌头中前抬 → 嘴角微笑到一半</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/æ/</td>
+                    <td className="px-4 py-2">cat, bad, apple</td>
+                    <td className="px-4 py-2 text-green-600">
+                      大口“哎”，像看牙医喊“啊”
+                    </td>
+                    <td className="px-4 py-2">
+                      嘴巴张到两指宽 → 下巴彻底掉下去
+                    </td>
+                  </tr>
+
+                  {/* 中元音 */}
+                  <tr>中元音：声音放中间，口型轻松</tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɜː/</td>
+                    <td className="px-4 py-2">bird, learn, girl</td>
+                    <td className="px-4 py-2 text-green-600">
+                      长长的“饿~”，嘴巴松开
+                    </td>
+                    <td className="px-4 py-2">
+                      舌头平放 → 嘴唇放松 → 声音拖长
+                    </td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ə/</td>
+                    <td className="px-4 py-2">about, sofa, pencil</td>
+                    <td className="px-4 py-2 text-green-600">
+                      轻轻“呃”，像随口带过
+                    </td>
+                    <td className="px-4 py-2">全程最懒 → 模糊带过就行</td>
                   </tr>
                   <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
                     <td className="px-4 py-2 font-mono text-lg">/ʌ/</td>
-                    <td className="px-4 py-2">cup, luck</td>
-                    <td className="px-4 py-2 text-red-500">发成中文"阿"</td>
-                    <td className="px-4 py-2">短促的中元音，嘴唇放松</td>
+                    <td className="px-4 py-2">cup, luck, blood</td>
+                    <td className="px-4 py-2 text-green-600">
+                      短促的“啊”，一股劲儿出来
+                    </td>
+                    <td className="px-4 py-2">
+                      舌中间微抬 → 嘴唇放松 → 干脆利落
+                    </td>
+                  </tr>
+
+                  {/* 后元音 */}
+                  <tr>后元音：嘴巴往后，像含着东西</tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/uː/</td>
+                    <td className="px-4 py-2">food, blue</td>
+                    <td className="px-4 py-2 text-green-600">
+                      长长的“乌~”，像吹气
+                    </td>
+                    <td className="px-4 py-2">嘴唇收圆凸出 → 舌头后缩</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ʊ/</td>
+                    <td className="px-4 py-2">good, put</td>
+                    <td className="px-4 py-2 text-green-600">
+                      短促的“乌”，比/uː/更轻
+                    </td>
+                    <td className="px-4 py-2">圆唇但一闪而过</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɔː/</td>
+                    <td className="px-4 py-2">door, law</td>
+                    <td className="px-4 py-2 text-green-600">
+                      长长的“喔~”，嘴唇圆圆
+                    </td>
+                    <td className="px-4 py-2">嘴巴收圆 → 舌后缩抬</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɒ/</td>
+                    <td className="px-4 py-2">hot, clock</td>
+                    <td className="px-4 py-2 text-green-600">
+                      短短的“喔”，英音特色
+                    </td>
+                    <td className="px-4 py-2">嘴巴小圆 → 快速放声</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɑː/</td>
+                    <td className="px-4 py-2">car, far</td>
+                    <td className="px-4 py-2 text-green-600">
+                      大大的“啊”，拖长音
+                    </td>
+                    <td className="px-4 py-2">嘴巴完全张开 → 舌头后缩</td>
+                  </tr>
+
+                  {/* 双元音 */}
+                  <tr>双元音：嘴型滑动，像变脸</tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/eɪ/</td>
+                    <td className="px-4 py-2">day, face</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “诶~衣”，嘴角渐渐拉开
+                    </td>
+                    <td className="px-4 py-2">/e/滑到/ɪ/ → 微笑收尾</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/aɪ/</td>
+                    <td className="px-4 py-2">my, time</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “啊~衣”，像喊“爱”
+                    </td>
+                    <td className="px-4 py-2">张大嘴 → 收小嘴</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɔɪ/</td>
+                    <td className="px-4 py-2">boy, coin</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “喔~衣”，先圆后扁
+                    </td>
+                    <td className="px-4 py-2">嘴唇圆 → 慢慢扁开</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/əʊ/</td>
+                    <td className="px-4 py-2">go, home</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “额~乌”，像说“欧”
+                    </td>
+                    <td className="px-4 py-2">松到圆 → 顺滑收尾</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/aʊ/</td>
+                    <td className="px-4 py-2">now, house</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “啊~乌”，像喊“奥”
+                    </td>
+                    <td className="px-4 py-2">张大嘴 → 圆起来</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ɪə/</td>
+                    <td className="px-4 py-2">ear, here</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “衣~呃”，慢慢收口
+                    </td>
+                    <td className="px-4 py-2">/ɪ/滑到/ə/ → 英音特色</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/eə/</td>
+                    <td className="px-4 py-2">air, there</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “诶~呃”，嘴巴渐松
+                    </td>
+                    <td className="px-4 py-2">/e/滑到/ə/ → 平顺过渡</td>
+                  </tr>
+                  <tr className={darkMode ? "bg-gray-800" : "bg-white"}>
+                    <td className="px-4 py-2 font-mono text-lg">/ʊə/</td>
+                    <td className="px-4 py-2">tour, pure</td>
+                    <td className="px-4 py-2 text-green-600">
+                      “乌~呃”，快速带过
+                    </td>
+                    <td className="px-4 py-2">/ʊ/滑到/ə/ → 现代英音少见</td>
                   </tr>
                 </tbody>
               </table>
