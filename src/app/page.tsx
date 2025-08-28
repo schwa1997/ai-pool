@@ -1,6 +1,7 @@
 "use client"
 import type { NextPage } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 const Home: NextPage = () => {
   const pageBg = {
@@ -13,15 +14,15 @@ const Home: NextPage = () => {
 
   const sections = [
     { href: "/curriculum", title: "Curriculum", emoji: "📘", desc: "Project-based roadmap" },
-    { href: "/trial", title: "Trial Lesson", emoji: "🧪", desc: "体验我的课堂" },
+    { href: "/enroll", title: "Enroll", emoji: "🧪", desc: "体验课与报名" },
     { href: "/pricing", title: "Pricing", emoji: "💳", desc: "清晰透明价格" },
     { href: "/faq", title: "FAQ", emoji: "❓", desc: "常见问题" },
     { href: "/profile", title: "About Me", emoji: "🧑‍🏫", desc: "ENFP · 教学理念" },
-    { href: "/book", title: "Book", emoji: "📅", desc: "预约与排期" },
+    { href: "/enroll", title: "Schedule", emoji: "📅", desc: "预约与排期" },
   ];
 
   return (
-    <div className="min-h-screen bg-[#e9f7ec] text-[#103b2b]" style={pageBg}>
+    <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)", ...pageBg }}>
       <div className="max-w-6xl mx-auto px-4 py-8">
         <main>
           <section className="mb-8">
@@ -59,9 +60,9 @@ const Home: NextPage = () => {
             </div>
           </section>
 
-          <section className="rounded-2xl bg-white/70 backdrop-blur p-5 border border-[#bde6c8]">
-            <h3 className="font-bold mb-2 text-[#0f2f22]">Welcome</h3>
-            <p className="text-sm text-[#225e45]">
+          <section className="card p-5">
+            <h3 className="font-bold mb-2">Welcome</h3>
+            <p className="text-sm opacity-90">
               项目驱动 · 输出为先 · 真实业务场景。专为希望通过英语获得更好远程工作机会的成年人设计。
             </p>
           </section>

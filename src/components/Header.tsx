@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const [pressed, setPressed] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <div className="sticky top-0 z-50">
@@ -54,6 +58,23 @@ export default function Header() {
             >
               Book Trial
             </Link>
+            {mounted && (
+              <button
+                aria-label="Toggle theme"
+                className="px-3 py-2 rounded-md text-sm border"
+                style={{
+                  background: "var(--card)",
+                  color: "var(--foreground)",
+                  borderColor: "var(--border)",
+                }}
+                onClick={() => {
+                  const resolved = theme === "system" ? systemTheme : theme;
+                  setTheme(resolved === "dark" ? "light" : "dark");
+                }}
+              >
+                {((theme === "system" ? systemTheme : theme) === "dark") ? "Light" : "Dark"}
+              </button>
+            )}
           </div>
         </div>
       </div>
