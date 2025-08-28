@@ -9,7 +9,7 @@ export default function ProfilePage() {
           <div className="flex items-center gap-3">
             <span className="text-3xl">🥑</span>
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight">Hi, I'm the Avocado English Teacher</h1>
+              <h1 className="text-2xl font-extrabold tracking-tight">Hi, I am the Avocado English Teacher</h1>
               <p className="text-sm opacity-85">ENFP · 热爱英语 · 热爱英语教学 · 反对枯燥的传统教育 · 喜欢有趣的学习</p>
             </div>
           </div>
